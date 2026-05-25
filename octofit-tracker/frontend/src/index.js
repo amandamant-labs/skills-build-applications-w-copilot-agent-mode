@@ -6,14 +6,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// Expose API base and log for debugging. Components should use apiUrl() helper.
-const codespace = process.env.REACT_APP_CODESPACE_NAME;
-const API_BASE = codespace
-  ? `https://${codespace}-8000.app.github.dev/api/`
-  : `${window.location.origin}/api/`;
-console.log('API_BASE set to:', API_BASE);
-window.API_BASE = API_BASE;
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

@@ -25,8 +25,6 @@ function Home() {
 }
 
 function App() {
-  // log API base for debugging
-  console.log('App initializing. API base:', window.API_BASE);
   const navClass = ({ isActive }) => (isActive ? 'nav-link active' : 'nav-link');
 
   return (
@@ -35,7 +33,7 @@ function App() {
         <div className="container-fluid">
           <NavLink className="navbar-brand d-flex align-items-center fw-bold text-white" to="/">
             <img src={logo} alt="OctoFit logo" className="app-logo me-2" />
-            <span className="brand-title">OctoFit Tracker</span>
+            <span>OctoFit Tracker</span>
           </NavLink>
           <button
             className="navbar-toggler border-0"
