@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.80146b55.css",
+    "main.js": "/static/js/main.b30a9821.js",
+    "static/js/453.20359781.chunk.js": "/static/js/453.20359781.chunk.js",
+    "static/media/octofitapp-small.svg": "/static/media/octofitapp-small.50dee1a6844954a0f9c3af39e697f990.svg",
+    "index.html": "/index.html",
+    "main.80146b55.css.map": "/static/css/main.80146b55.css.map",
+    "main.b30a9821.js.map": "/static/js/main.b30a9821.js.map",
+    "453.20359781.chunk.js.map": "/static/js/453.20359781.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.80146b55.css",
+    "static/js/main.b30a9821.js"
+  ]
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="OctoFit logo">
+  <defs>
+    <linearGradient id="lg" x1="0" x2="1">
+      <stop offset="0" stop-color="#0d6efd" />
+      <stop offset="1" stop-color="#6610f2" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="12" fill="url(#lg)" />
+  <g transform="translate(12,12)" fill="#fff">
+    <circle cx="10" cy="10" r="8" />
+    <rect x="26" y="8" width="16" height="8" rx="3" />
+  </g>
+</svg>

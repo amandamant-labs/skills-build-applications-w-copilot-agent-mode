@@ -1,0 +1,9 @@
+/* Minimal index.css to satisfy CRA import. App-specific styles are in App.css */
+html, body, #root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
