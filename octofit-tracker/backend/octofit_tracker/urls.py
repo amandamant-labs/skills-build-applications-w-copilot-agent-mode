@@ -15,7 +15,34 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.http import HttpResponse, HttpResponseRedirect
+import os
+
+
+def redirect_api_to_codespace(request, subpath=''):
+    """Redirect /api/... to the Codespace preview domain if available.
+
+    Falls back to the current host if CODESPACE_NAME is not set.
+    """
+    codespace = os.environ.get('CODESPACE_NAME')
+    if codespace:
+        target = f"https://{codespace}-8000.app.github.dev/api/{subpath}"
+    else:
+        target = request.build_absolute_uri(f"/api/{subpath}")
+    # Ensure trailing slash
+    if not target.endswith('/'):
+        target += '/'
+    return HttpResponseRedirect(target)
+
+
+def home(request):
+    return HttpResponse("<h1>OctoFit Tracker API</h1><p>Backend is running.</p>")
+
 
 urlpatterns = [
+    # Redirect any API requests to the Codespace preview domain when available
+    path('', home),
+    path('api/', redirect_api_to_codespace),
+    path('api/<path:subpath>/', redirect_api_to_codespace),
     path('admin/', admin.site.urls),
 ]
