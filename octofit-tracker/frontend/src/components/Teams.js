@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react';
-
-const baseUrl = process.env.REACT_APP_CODESPACE_NAME
-  ? `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev`
-  : 'http://localhost:8000';
+import { apiUrl } from '../api';
 
 function Teams() {
   const [items, setItems] = useState([]);
   const [filter, setFilter] = useState('');
   const [showModal, setShowModal] = useState(false);
-  const endpoint = `${baseUrl}/api/teams/`;
+  const endpoint = apiUrl('teams');
 
   useEffect(() => {
     console.log('Fetching Teams endpoint:', endpoint);
@@ -97,9 +94,9 @@ function Teams() {
 
       {showModal && (
         <div>
-          <div className="modal-backdrop-custom" onClick={() => setShowModal(false)} />
-          <div className="modal modal-custom d-block" tabIndex="-1">
-            <div className="modal-dialog modal-xl modal-dialog-centered">
+          <div className="modal-backdrop fade show" onClick={() => setShowModal(false)} />
+          <div className="modal fade show d-block modal-custom" tabIndex="-1" role="dialog">
+            <div className="modal-dialog modal-xl modal-dialog-centered" role="document">
               <div className="modal-content">
                 <div className="modal-header">
                   <h5 className="modal-title">Teams JSON</h5>

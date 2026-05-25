@@ -1,24 +1,25 @@
 :root {
-  --app-bg: #eef5ff;
-  --app-gradient: linear-gradient(135deg, #f0f6ff 0%, #e8efff 45%, #dce7ff 100%);
-  --card-bg: rgba(255, 255, 255, 0.92);
-  --card-border: rgba(13, 110, 253, 0.12);
-  --text-primary: #102a43;
-  --text-secondary: #42526e;
+  --app-bg: #f7fbff;
+  --app-gradient: linear-gradient(135deg, #f7fbff 0%, #eef6ff 45%, #e2f0ff 100%);
+  --card-bg: rgba(255, 255, 255, 0.98);
+  --card-border: rgba(13, 110, 253, 0.14);
+  --text-primary: #0b2635;
+  --text-secondary: #3b4b5a;
   --text-muted: #6c757d;
-  --primary: #0d6efd;
-  --primary-strong: #0b5ed7;
-  --secondary: #6610f2;
-  --nav-bg: #0d6efd;
-  --nav-link: rgba(255, 255, 255, 0.85);
+  --primary: #0d6efd; /* blue */
+  --primary-strong: #0847c9;
+  --accent: #20c997; /* green accent */
+  --secondary: #6610f2; /* purple */
+  --nav-bg: linear-gradient(90deg, #0d6efd 0%, #6610f2 100%);
+  --nav-link: rgba(255, 255, 255, 0.95);
   --nav-link-active: #ffffff;
-  --table-header: #f1f5ff;
+  --table-header: #e9f2ff;
   --table-row: #ffffff;
-  --table-row-alt: #f7faff;
-  --button-bg: #6610f2;
-  --button-hover: #4f05b5;
+  --table-row-alt: #f4fbff;
+  --button-bg: #0d6efd;
+  --button-hover: #0b5ed7;
   --link-color: #0d6efd;
-  --link-hover: #0a58ca;
+  --link-hover: #0847c9;
 }
 
 body {
@@ -35,12 +36,16 @@ body {
 }
 
 .navbar-custom {
-  background: linear-gradient(90deg, #0d6efd 0%, #6610f2 100%);
+  background: var(--nav-bg);
   border: none;
 }
 
 .navbar-brand {
   color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: auto; /* keep logo to the left */
 }
 
 .navbar-brand:hover,
@@ -71,6 +76,12 @@ body {
 .app-logo {
   width: 38px;
   height: 38px;
+}
+
+.navbar-brand .brand-title {
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: #fff;
 }
 
 .card-custom {
@@ -116,6 +127,20 @@ body {
   color: #1f2f49;
   font-weight: 700;
   border-bottom: 2px solid rgba(13, 110, 253, 0.1);
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.endpoint-text a {
+  color: var(--link-color);
+}
+
+.card-custom h2,
+.card-custom h1 {
+  color: var(--text-primary);
 }
 
 .table tbody tr {
@@ -169,6 +194,17 @@ pre {
   background-color: #eff2ff;
   padding: 1rem;
   border-radius: 0.75rem;
+}
+
+/* Small responsive tweaks for nav and layout */
+@media (max-width: 767px) {
+  .navbar-brand .brand-title {
+    font-size: 0.95rem;
+  }
+  .app-logo {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .modal-backdrop-custom {
