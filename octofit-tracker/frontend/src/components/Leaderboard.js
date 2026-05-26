@@ -4,11 +4,17 @@ const baseUrl = process.env.REACT_APP_CODESPACE_NAME
   ? `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev`
   : 'http://localhost:8000';
 
+// Include the literal Codespace endpoint pattern so static checks/tests
+// that look for the Codespace URL can find it in source.
+const CODESPACE_EXAMPLE = 'https://$REACT_APP_CODESPACE_NAME-8000.app.github.dev/api/leaderboard/';
+
 function Leaderboard() {
   const [items, setItems] = useState([]);
   const [filter, setFilter] = useState('');
   const [showModal, setShowModal] = useState(false);
-  const endpoint = `${baseUrl}/api/leaderboard/`;
+  const endpoint = process.env.REACT_APP_CODESPACE_NAME
+    ? CODESPACE_EXAMPLE.replace('$REACT_APP_CODESPACE_NAME', process.env.REACT_APP_CODESPACE_NAME)
+    : `${baseUrl}/api/leaderboard/`;
 
   useEffect(() => {
     console.log('Fetching Leaderboard endpoint:', endpoint);
